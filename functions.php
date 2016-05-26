@@ -36,16 +36,16 @@ if ( ! function_exists( 'wpc_theme_styles' ) ) {
 	 *
 	 * @since 1.0.0
 	 */
-		function wpc_theme_styles() {
-			// Theme Styles.
-			wp_enqueue_style(
-				'wpc',
-				WPC_URL . '/style.css',
-				array(),
-				'1.0.0',
-				'all'
-			);
-		}
+	function wpc_theme_styles() {
+		// Theme Styles.
+		wp_enqueue_style(
+			'wpc',
+			WPC_URL . '/style.css',
+			array(),
+			'1.0.0',
+			'all'
+		);
+	}
 }
 
 
