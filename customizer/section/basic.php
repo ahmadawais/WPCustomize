@@ -1,11 +1,11 @@
 <?php
 /**
- * Panel: Basic
+ * Section: Basic
  *
- * Basic Customizer panel with basic controls.
+ * Basic Customizer section with basic controls.
  *
  * @since 	1.0.0
- * @package WPc
+ * @package WPC
  */
 
 // Exit if accessed directly.
@@ -27,18 +27,10 @@ if ( ! function_exists( 'wpc_customize_panel_basic' ) ) {
 	 * @since  1.0.0
 	 */
 	function wpc_customize_panel_basic( $wp_customize ) {
-		// Panel: Basic.
-		$wp_customize->add_panel( 'wpc_panel_basic', array(
-			'priority'       => 10,
-			'title'          => __( 'Basic Panel Title', 'WPC' ),
-			'description'    => __( 'Panel Description', 'WPC' ),
-			'capability'     => 'edit_theme_options'
-		) );
-
 		// Section: Basic.
 		$wp_customize->add_section( 'wpc_section_basic', array(
 			'priority'       => 10,
-			'panel'          => 'wpc_panel_basic',
+			'panel'          => 'wpc_panel_wpcustomize',
 			'title'          => __( 'Basic Section Title', 'WPC' ),
 			'description'    => __( 'Section Description.', 'WPC' ),
 			'capability'     => 'edit_theme_options'
