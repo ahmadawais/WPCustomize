@@ -30,7 +30,7 @@ if ( ! function_exists( 'wpc_customize_panel_basic' ) ) {
 		// Panel: Basic.
 		$wp_customize->add_panel( 'wpc_panel_basic', array(
 			'priority'       => 10,
-			'title'          => __( 'Panel Title', 'WPC' ),
+			'title'          => __( 'Basic Panel Title', 'WPC' ),
 			'description'    => __( 'Panel Description', 'WPC' ),
 			'capability'     => 'edit_theme_options'
 		) );
@@ -39,7 +39,7 @@ if ( ! function_exists( 'wpc_customize_panel_basic' ) ) {
 		$wp_customize->add_section( 'wpc_section_basic', array(
 			'priority'       => 10,
 			'panel'          => 'wpc_panel_basic',
-			'title'          => __( 'Section Title', 'WPC' ),
+			'title'          => __( 'Basic Section Title', 'WPC' ),
 			'description'    => __( 'Section Description.', 'WPC' ),
 			'capability'     => 'edit_theme_options'
 		) );
@@ -58,7 +58,83 @@ if ( ! function_exists( 'wpc_customize_panel_basic' ) ) {
 			'label'       => __( 'Text', 'WPC' ),
 			'description' => __( 'Description', 'WPC' ),
 			'section'     => 'wpc_section_basic',
-			'type'        => 'text',
+			'type'        => 'text'
+		) );
+
+		// Setting: Textarea.
+		$wp_customize->add_setting( 'wpc_textarea', array(
+			'type'                 => 'theme_mod',
+			'default'              => 'Placeholder textarea.',
+			'transport'            => 'refresh', // Options: refresh or postMessage.
+			'capability'           => 'edit_theme_options',
+			'sanitize_callback'    => 'exc_textarea'
+		) );
+
+		// Control: Textarea.
+		$wp_customize->add_control( 'wpc_textarea', array(
+			'label'       => __( 'Textarea', 'WPC' ),
+			'description' => __( 'Description', 'WPC' ),
+			'section'     => 'wpc_section_basic',
+			'type'        => 'textarea'
+		) );
+
+		// Setting: Checkbox.
+		$wp_customize->add_setting( 'wpc_checkbox', array(
+			'type'                 => 'theme_mod',
+			'default'              => 'enable',
+			'transport'            => 'refresh', // Options: refresh or postMessage.
+			'capability'           => 'edit_theme_options',
+			'sanitize_callback'    => 'wpc_sanitize_checkbox' // Custom function in customizer-sanitization.php file.
+		) );
+
+		// Control: Checkbox.
+		$wp_customize->add_control( 'wpc_checkbox', array(
+			'label'       => __( 'Checkbox', 'WPC' ),
+			'description' => __( 'Description', 'WPC' ),
+			'section'     => 'wpc_section_basic',
+			'type'        => 'checkbox'
+		) );
+
+		// Setting: Radio.
+		$wp_customize->add_setting( 'wpc_radio', array(
+			'type'                 => 'theme_mod',
+			'default'              => 'on',
+			'transport'            => 'refresh', // Options: refresh or postMessage.
+			'capability'           => 'edit_theme_options',
+			'sanitize_callback'    => 'wpc_sanitize_select', // Custom function in customizer-sanitization.php file.
+		) );
+
+		// Control: Radio.
+		$wp_customize->add_control( 'wpc_radio', array(
+			'label'       => __( 'Radio', 'WPC' ),
+			'description' => __( 'Description', 'WPC' ),
+			'section'     => 'wpc_section_basic',
+			'type'        => 'radio',
+			'choices'  => array(
+				'enable'  => 'Enable',
+				'disable' => 'Disable'
+			)
+		) );
+
+		// Setting: Select.
+		$wp_customize->add_setting( 'wpc_select', array(
+			'type'                 => 'theme_mod',
+			'default'              => 'enable',
+			'transport'            => 'refresh', // Options: refresh or postMessage.
+			'capability'           => 'edit_theme_options',
+			'sanitize_callback'    => 'wpc_sanitize_select' // Custom function in customizer-sanitization.php file.
+		) );
+
+		// Control: Select.
+		$wp_customize->add_control( 'wpc_select', array(
+			'label'       => __( 'Select', 'WPC' ),
+			'description' => __( 'Description', 'WPC' ),
+			'section'     => 'wpc_section_basic',
+			'type'        => 'select',
+			'choices'  => array(
+				'enable'  => 'Enable',
+				'disable' => 'Disable'
+			)
 		) );
 	}
 }
