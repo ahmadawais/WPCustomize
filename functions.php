@@ -27,6 +27,28 @@ if ( ! defined( 'WPC_URL' ) ) {
 }
 
 
+if ( ! function_exists( 'wpc_theme_styles' ) ) {
+	// Add Theme Stylesheet.
+	add_action( 'wp_enqueue_scripts', 'wpc_theme_styles' );
+
+	/**
+	 * WPC Theme styles enqueue.
+	 *
+	 * @since 1.0.0
+	 */
+		function wpc_theme_styles() {
+			// Theme Styles.
+			wp_enqueue_style(
+				'wpc',
+				WPC_URL . '/style.css',
+				array(),
+				'1.0.0',
+				'all'
+			);
+		}
+}
+
+
 /**
  * Customize Init.
  *
