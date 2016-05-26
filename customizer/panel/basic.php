@@ -1,8 +1,8 @@
 <?php
 /**
- * Panel: WPCustomize
+ * Panel: Basic
  *
- * Customizer panel.
+ * Basic Customizer panel with basic controls.
  *
  * @since 	1.0.0
  * @package WPc
@@ -14,9 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Customize function.
-if ( ! function_exists( 'wpc_customize_panel' ) ) {
+if ( ! function_exists( 'wpc_customize_panel_basic' ) ) {
 	// Customize Register action.
-	add_action( 'customize_register', 'wpc_customize_panel' );
+	add_action( 'customize_register', 'wpc_customize_panel_basic' );
 
 	/**
 	 * Customize Panel.
@@ -26,19 +26,19 @@ if ( ! function_exists( 'wpc_customize_panel' ) ) {
 	 * @param  object WP_Customize $wp_customize Instance of the WP_Customize_Manager class.
 	 * @since  1.0.0
 	 */
-	function wpc_customize_panel( $wp_customize ) {
-		// Panel: WPCustomize.
-		$wp_customize->add_panel( 'wpc_panel_wpcustomize', array(
+	function wpc_customize_panel_basic( $wp_customize ) {
+		// Panel: Basic.
+		$wp_customize->add_panel( 'wpc_panel_basic', array(
 			'priority'       => 10,
-			'title'          => __( 'WPCustomize Panel', 'WPC' ),
-			'description'    => __( 'WPCustomize Panel Description', 'WPC' ),
+			'title'          => __( 'Panel Title', 'WPC' ),
+			'description'    => __( 'Panel Description', 'WPC' ),
 			'capability'     => 'edit_theme_options'
 		) );
 
-		// Section: WPCustomize.
-		$wp_customize->add_section( 'wpc_section_wpcustomize', array(
+		// Section: Basic.
+		$wp_customize->add_section( 'wpc_section_basic', array(
 			'priority'       => 10,
-			'panel'          => 'wpc_panel_wpcustomize',
+			'panel'          => 'wpc_panel_basic',
 			'title'          => __( 'Section Title', 'WPC' ),
 			'description'    => __( 'Section Description.', 'WPC' ),
 			'capability'     => 'edit_theme_options'
@@ -57,7 +57,7 @@ if ( ! function_exists( 'wpc_customize_panel' ) ) {
 		$wp_customize->add_control( 'wpc_text', array(
 			'label'       => __( 'Text', 'WPC' ),
 			'description' => __( 'Description', 'WPC' ),
-			'section'     => 'wpc_section_wpcustomize',
+			'section'     => 'wpc_section_basic',
 			'type'        => 'text',
 		) );
 	}
