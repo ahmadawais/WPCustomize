@@ -16,14 +16,20 @@ Following architecture design is followed inside the root folder `wpcustomizer` 
 
 ###Screenshots
 
-**WPCustomize Panel**:
+####**WPCustomize Panel**:
 ![](https://i.imgur.com/2xJ6lIE.png)
 
-**WPCustomize Sections**:
+---
+
+####**WPCustomize Sections**:
 ![](https://i.imgur.com/BCGPJu5.png)
 
-**WPCustomize Section: Basic**
+---
+
+####**WPCustomize Section: Basic**
 ![](https://i.imgur.com/GSJZhqy.png)
 
-**WPCustomize Section: Advanced**
+---
+
+####**WPCustomize Section: Advanced**
 ![](https://i.imgur.com/8DslCSw.png)
