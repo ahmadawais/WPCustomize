@@ -52,3 +52,12 @@ Following architecture design is followed inside the root folder `wpcustomizer` 
 
 #### **WPCustomize Section: Advanced**
 ![](https://i.imgur.com/8DslCSw.png)
+
+
+## License
+Released under MIT License.
+Copyright [Ahmad Awais](https://AhmadAwais.com/)
+
+---
+
+🙌 — If 500 people [signup here](http://eepurl.com/cLwjeH), I will build a video series for this.
